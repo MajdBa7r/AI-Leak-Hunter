@@ -1,0 +1,225 @@
+{
+  "dataset": {
+    "invoice_lines": 5000,
+    "anomalous": 500,
+    "normal": 4500,
+    "anomaly_rate": 0.1,
+    "primary_type_counts": {
+      "NORMAL": 4500,
+      "PO_PRICE_MISMATCH": 170,
+      "QUANTITY_DISCREPANCY": 140,
+      "HISTORICAL_PRICE_SPIKE": 110,
+      "DUPLICATE_INVOICE": 80
+    },
+    "duplicate_pairs": 40,
+    "findings_on_unknown_lines": 0
+  },
+  "rules_line_level": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 1,
+    "precision": 1.0,
+    "recall": 0.998,
+    "f1": 0.999,
+    "tn": 4500
+  },
+  "pending_grace_period": {
+    "lines_pending": 1,
+    "planted_anomalies_pending": 1,
+    "normal_lines_pending": 0,
+    "note": "pending = billed beyond posted receipts but younger than the grace period; deferred, not cleared",
+    "recall_counting_pending_as_deferred": 1.0
+  },
+  "rules_per_type_multilabel": {
+    "DUPLICATE_INVOICE": {
+      "tp": 80,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tn": 4920,
+      "support": 80
+    },
+    "QUANTITY_DISCREPANCY": {
+      "tp": 179,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.9944,
+      "f1": 0.9972,
+      "tn": 4820,
+      "support": 180
+    },
+    "PO_PRICE_MISMATCH": {
+      "tp": 203,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tn": 4797,
+      "support": 203
+    },
+    "HISTORICAL_PRICE_SPIKE": {
+      "tp": 125,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tn": 4875,
+      "support": 125
+    }
+  },
+  "rules_primary_type_recall": {
+    "DUPLICATE_INVOICE": {
+      "planted": 80,
+      "detected_by_own_rule": 80,
+      "detected_by_any_rule": 80
+    },
+    "QUANTITY_DISCREPANCY": {
+      "planted": 140,
+      "detected_by_own_rule": 139,
+      "detected_by_any_rule": 139
+    },
+    "PO_PRICE_MISMATCH": {
+      "planted": 170,
+      "detected_by_own_rule": 170,
+      "detected_by_any_rule": 170
+    },
+    "HISTORICAL_PRICE_SPIKE": {
+      "planted": 110,
+      "detected_by_own_rule": 110,
+      "detected_by_any_rule": 110
+    }
+  },
+  "rules_confusion_primary_vs_finding_type": {
+    "NORMAL": {
+      "DUPLICATE_INVOICE": 0,
+      "QUANTITY_DISCREPANCY": 0,
+      "PO_PRICE_MISMATCH": 0,
+      "HISTORICAL_PRICE_SPIKE": 0,
+      "NO_RULE_FINDING": 4500,
+      "lines": 4500
+    },
+    "DUPLICATE_INVOICE": {
+      "DUPLICATE_INVOICE": 80,
+      "QUANTITY_DISCREPANCY": 40,
+      "PO_PRICE_MISMATCH": 0,
+      "HISTORICAL_PRICE_SPIKE": 0,
+      "NO_RULE_FINDING": 0,
+      "lines": 80
+    },
+    "QUANTITY_DISCREPANCY": {
+      "DUPLICATE_INVOICE": 0,
+      "QUANTITY_DISCREPANCY": 139,
+      "PO_PRICE_MISMATCH": 0,
+      "HISTORICAL_PRICE_SPIKE": 0,
+      "NO_RULE_FINDING": 1,
+      "lines": 140
+    },
+    "PO_PRICE_MISMATCH": {
+      "DUPLICATE_INVOICE": 0,
+      "QUANTITY_DISCREPANCY": 0,
+      "PO_PRICE_MISMATCH": 170,
+      "HISTORICAL_PRICE_SPIKE": 15,
+      "NO_RULE_FINDING": 0,
+      "lines": 170
+    },
+    "HISTORICAL_PRICE_SPIKE": {
+      "DUPLICATE_INVOICE": 0,
+      "QUANTITY_DISCREPANCY": 0,
+      "PO_PRICE_MISMATCH": 33,
+      "HISTORICAL_PRICE_SPIKE": 110,
+      "NO_RULE_FINDING": 0,
+      "lines": 110
+    }
+  },
+  "rules_exact_type_set_match": {
+    "lines_matching": 4999,
+    "lines": 5000
+  },
+  "false_positives_rules": {
+    "count": 0,
+    "by_finding_type": {},
+    "examples": []
+  },
+  "false_negatives_rules": {
+    "count": 1,
+    "by_primary_type": {
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "of_which_pending_grace_period": 1,
+    "examples": [
+      "INV-002644-03"
+    ]
+  },
+  "rules_document_level": {
+    "tp": 475,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tn": 2195
+  },
+  "rules_incident_level": {
+    "true_incidents": 460,
+    "predicted_incidents": 459,
+    "exactly_matched_true": 459,
+    "exactly_matched_predicted": 459,
+    "precision": 1.0,
+    "recall": 0.9978
+  },
+  "duplicate_pairs": {
+    "true_pairs": 40,
+    "predicted_groups": 40,
+    "pairs_exactly_matched": 40,
+    "predicted_groups_matching_a_true_pair": 40
+  },
+  "exposure": {
+    "comparison_unit": "true-positive invoice lines; predicted = de-duplicated line exposure",
+    "lines_compared": 499,
+    "exact_matches_to_cent": 499,
+    "mean_abs_diff": 0.0,
+    "predicted_total_deduplicated": 819600.65,
+    "expected_total_ground_truth": 820324.37,
+    "naive_sum_of_rule_findings": 1328768.3,
+    "exposure_on_false_positive_lines": 0.0,
+    "paid_exposure_exact_matches": 499,
+    "predicted_paid_total": 659650.26,
+    "expected_paid_total": 659650.26,
+    "confirmed_loss_total": 154685.59,
+    "by_primary_type": {
+      "DUPLICATE_INVOICE": {
+        "lines": 80,
+        "exact_matches": 80,
+        "predicted_total": 206875.13,
+        "expected_total": 206875.13,
+        "max_abs_diff": 0.0
+      },
+      "QUANTITY_DISCREPANCY": {
+        "lines": 139,
+        "exact_matches": 139,
+        "predicted_total": 205960.74,
+        "expected_total": 205960.74,
+        "max_abs_diff": 0.0
+      },
+      "PO_PRICE_MISMATCH": {
+        "lines": 170,
+        "exact_matches": 170,
+        "predicted_total": 167642.37,
+        "expected_total": 167642.37,
+        "max_abs_diff": 0.0
+      },
+      "HISTORICAL_PRICE_SPIKE": {
+        "lines": 110,
+        "exact_matches": 110,
+        "predicted_total": 239122.41,
+        "expected_total": 239122.41,
+        "max_abs_diff": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+supplier_id,supplier_name,category,country,supplier_tier
+SUP-0001,Ravenscroft Containers LLC,Packaging,United States,Medium
+SUP-0002,Bluestone Electric Supply LLC,Electrical Components,United States,Small
+SUP-0003,Juniper Chemicals S.A. de C.V.,Lab & Chemicals,Mexico,Small
+SUP-0004,"Elmstead Maintenance Supply Co., Ltd.",MRO & Tools,South Korea,Medium
+SUP-0005,Northbay Safety Supply Inc.,Safety & PPE,United States,Small
+SUP-0006,Larchmont Engineering Stores S.A. de C.V.,MRO & Tools,Mexico,Small
+SUP-0007,Newhaven Digital Systems Sp. z o.o.,IT Hardware,Poland,Medium
+SUP-0008,Copperfield Workwear & PPE Corp.,Safety & PPE,United States,Small
+SUP-0009,Westhollow Industrial Supply Inc.,MRO & Tools,United States,Large
+SUP-0010,Driftwood Packaging S.r.l.,Packaging,Italy,Medium
+SUP-0011,Silverbirch Office Essentials Inc.,Office Supplies,Canada,Medium
+SUP-0012,Juniper Chemicals LLC,Lab & Chemicals,United States,Small
+SUP-0013,Copperfield Maintenance Supply Corp.,MRO & Tools,United States,Medium
+SUP-0014,"Lowbridge Cable & Control Co., Ltd.",Electrical Components,South Korea,Large
+SUP-0015,Wrenfield Cable & Control LLC,Electrical Components,United States,Medium
+SUP-0016,Lowbridge IT Distribution S.L.,IT Hardware,Spain,Medium
+SUP-0017,Quayside Maintenance Supply Ltd.,MRO & Tools,United Kingdom,Small
+SUP-0018,Juniper Industrial Supply Corp.,MRO & Tools,United States,Large
+SUP-0019,Thornbury Office Essentials Corp.,Office Supplies,United States,Small
+SUP-0020,"Silverbirch IT Distribution Co., Ltd.",IT Hardware,China,Medium
+SUP-0021,Oakhurst Engineering Stores Inc.,MRO & Tools,United States,Small
+SUP-0022,Ivydale Facilities Products K.K.,Facilities Consumables,Japan,Small
+SUP-0023,Juniper Janitorial Inc.,Facilities Consumables,United States,Small
+SUP-0024,Greystone Facilities Products S.A. de C.V.,Facilities Consumables,Mexico,Medium
+SUP-0025,Maplecrest Power Components Corp.,Electrical Components,United States,Small
+SUP-0026,Valemont Workwear & PPE Corp.,Safety & PPE,United States,Large
+SUP-0027,Millbrook Computing Ltd.,IT Hardware,United Kingdom,Medium
+SUP-0028,Kingsmere IT Distribution Corp.,IT Hardware,United States,Small
+SUP-0029,Yarrowdale Cable & Control Ltd.,Electrical Components,United Kingdom,Medium
+SUP-0030,Wrenfield Lab Supply Corp.,Lab & Chemicals,United States,Medium
+SUP-0031,Birchfield Tech Supply Corp.,IT Hardware,United States,Medium
+SUP-0032,Ironbridge Chemicals LLC,Lab & Chemicals,United States,Small
+SUP-0033,Bluestone Protective Equipment LLC,Safety & PPE,United States,Small
+SUP-0034,Thornbury Facility Supply Ltd.,Facilities Consumables,United Kingdom,Small
+SUP-0035,Elmstead Engineering Stores S.r.l.,MRO & Tools,Italy,Large
+SUP-0036,Copperfield Safety Supply Inc.,Safety & PPE,United States,Small
+SUP-0037,Eastbrook Janitorial S.A. de C.V.,Facilities Consumables,Mexico,Medium
+SUP-0038,Maplecrest Packaging LLC,Packaging,United States,Medium
+SUP-0039,Pinewood Pack Solutions LLC,Packaging,United States,Small
+SUP-0040,Copperfield Tool & Fastener S.A. de C.V.,MRO & Tools,Mexico,Large
+SUP-0041,Maplecrest Hygiene Supply GmbH,Facilities Consumables,Germany,Small
+SUP-0042,Northbay Electric Supply Inc.,Electrical Components,United States,Large
+SUP-0043,Larchmont Workplace Goods LLC,Office Supplies,United States,Medium
+SUP-0044,Dunmore Tech Supply LLC,IT Hardware,United States,Medium
+SUP-0045,Ironbridge Packaging Corp.,Packaging,United States,Medium
+SUP-0046,Stonegate Electrical LLC,Electrical Components,United States,Small
+SUP-0047,Ivydale Workplace Goods S.A. de C.V.,Office Supplies,Mexico,Medium
+SUP-0048,Newhaven Scientific Ltd.,Lab & Chemicals,Canada,Medium
+SUP-0049,Bluestone Lab Supply Inc.,Lab & Chemicals,Canada,Small
+SUP-0050,Fairhaven Laboratory Products Corp.,Lab & Chemicals,United States,Small
+SUP-0051,Millbrook Electric Supply LLC,Electrical Components,United States,Small
+SUP-0052,Thornbury Protective Equipment Ltd.,Safety & PPE,United Kingdom,Small
+SUP-0053,Kingsmere Digital Systems B.V.,IT Hardware,Netherlands,Small
+SUP-0054,"Yarrowdale Wrap & Pack Co., Ltd.",Packaging,South Korea,Medium
+SUP-0055,Coldspring Wrap & Pack Inc.,Packaging,United States,Medium
+SUP-0056,"Elmstead Stationers Co., Ltd.",Office Supplies,China,Medium
+SUP-0057,Ivydale Protective Equipment Ltd.,Safety & PPE,Canada,Small
+SUP-0058,Kestrel Facility Supply GmbH,Facilities Consumables,Germany,Small
+SUP-0059,Hollybrook Electric Supply S.r.l.,Electrical Components,Italy,Small
+SUP-0060,Northbay Laboratory Products Pvt. Ltd.,Lab & Chemicals,India,Small
+SUP-0061,Ivydale Tech Supply Pvt. Ltd.,IT Hardware,India,Medium
+SUP-0062,"Ravenscroft Packaging Co., Ltd.",Packaging,China,Medium
+SUP-0063,Hollybrook Facility Supply Corp.,Facilities Consumables,United States,Medium
+SUP-0064,Juniper Office Essentials S.A. de C.V.,Office Supplies,Mexico,Large
+SUP-0065,Glenmore Janitorial Inc.,Facilities Consumables,United States,Small
+SUP-0066,Maplecrest Scientific GmbH,Lab & Chemicals,Germany,Small
+SUP-0067,Coldspring Tool & Fastener Inc.,MRO & Tools,United States,Medium
+SUP-0068,Cedarline Office Supply S.r.l.,Office Supplies,Italy,Large
+SUP-0069,Hollybrook Packaging S.r.l.,Packaging,Italy,Large
+SUP-0070,"Kingsmere Safety Products Co., Ltd.",Safety & PPE,China,Medium
+SUP-0071,Kingsmere Scientific GmbH,Lab & Chemicals,Germany,Large
+SUP-0072,"Larchmont Workplace Goods Co., Ltd.",Office Supplies,China,Medium
+SUP-0073,Newhaven Cable & Control Ltd.,Electrical Components,Canada,Small
+SUP-0074,Maplecrest Office Supply LLC,Office Supplies,United States,Medium
+SUP-0075,Pinewood Workplace Goods Ltd.,Office Supplies,Canada,Small
+SUP-0076,Pinewood Workwear & PPE S.A. de C.V.,Safety & PPE,Mexico,Large
+SUP-0077,Oakhurst Packaging Ltd.,Packaging,Canada,Small
+SUP-0078,"Maplecrest Safety Products Co., Ltd.",Safety & PPE,China,Large
+SUP-0079,Driftwood Hygiene Supply LLC,Facilities Consumables,United States,Large
+SUP-0080,Northbay Tech Supply Pvt. Ltd.,IT Hardware,India,Small

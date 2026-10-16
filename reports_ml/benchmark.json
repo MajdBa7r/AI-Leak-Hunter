@@ -1,0 +1,203 @@
+{
+  "features": [
+    "log_line_amount",
+    "price_vs_approved_rel",
+    "share_billed_ahead_of_receipt",
+    "hist_price_log_ratio",
+    "hist_price_robust_z",
+    "has_price_history",
+    "log_amount_vs_supplier_median",
+    "log_supplier_docs_prior_window",
+    "days_po_to_invoice",
+    "log_qty_vs_prior_median_same_item",
+    "supplier_90d_amount_robust_z",
+    "log_days_since_prev_supplier_invoice",
+    "log_lines_on_invoice"
+  ],
+  "n_train": 2980,
+  "n_test": 2020,
+  "base_rate_test": 0.10792079207920792,
+  "winner": "Isolation Forest",
+  "top1": {
+    "invoice_line_id": "INV-002273-02",
+    "ground_truth": "HISTORICAL_PRICE_SPIKE",
+    "shap": {
+      "log_line_amount": 0.7160872163956421,
+      "price_vs_approved_rel": 2.123716981531502,
+      "share_billed_ahead_of_receipt": -0.11464713263589096,
+      "hist_price_log_ratio": 1.3629648794927323,
+      "hist_price_robust_z": 1.456246916682421,
+      "has_price_history": 0.1390443307029451,
+      "log_amount_vs_supplier_median": 0.6476472482462609,
+      "log_supplier_docs_prior_window": -0.09232617955205441,
+      "days_po_to_invoice": -0.0727702121725732,
+      "log_qty_vs_prior_median_same_item": 0.7638110492262693,
+      "supplier_90d_amount_robust_z": 0.5914571712610074,
+      "log_days_since_prev_supplier_invoice": -0.07375136030869178,
+      "log_lines_on_invoice": 0.2870259336680653
+    },
+    "shap_base": -12.910074278645144,
+    "shap_output": -5.175567436107509,
+    "shap_units": "negative mean isolation depth (higher = isolated in fewer splits = more anomalous)",
+    "autoencoder_error_share": {
+      "price_vs_approved_rel": 0.7265284835193647,
+      "log_amount_vs_supplier_median": 0.08768361077862863,
+      "log_line_amount": 0.06789745216520786,
+      "days_po_to_invoice": 0.04529138940927831,
+      "log_supplier_docs_prior_window": 0.031349129850156775
+    }
+  },
+  "metrics": {
+    "Isolation Forest": {
+      "family": "tree",
+      "p_at_10": 1.0,
+      "p_at_25": 0.8,
+      "p_at_50": 0.7,
+      "roc_auc": 0.8405619647893777,
+      "pr_auc": 0.47580249931322405,
+      "pr_auc_ci95": [
+        0.411007861591217,
+        0.5459802534508922
+      ],
+      "fpr_at_recall_50": 0.06936736958934517,
+      "fpr_at_recall_80": 0.28579356270810213,
+      "review_flagged": 73,
+      "review_precision": 0.6438356164383562,
+      "review_recall": 0.21559633027522937,
+      "recall_by_type_at_review": {
+        "PO_PRICE_MISMATCH": "14/64",
+        "QUANTITY_DISCREPANCY": "1/62",
+        "HISTORICAL_PRICE_SPIKE": "32/65",
+        "DUPLICATE_INVOICE": "0/27"
+      },
+      "latency_ms_per_1000": 57.28844851485672,
+      "fit_seconds": 0.7571480889998838
+    },
+    "Local Outlier Factor": {
+      "family": "distance",
+      "p_at_10": 0.9,
+      "p_at_25": 0.52,
+      "p_at_50": 0.38,
+      "roc_auc": 0.5555193515869219,
+      "pr_auc": 0.20774510127446386,
+      "pr_auc_ci95": [
+        0.1621912505832601,
+        0.26782052469221534
+      ],
+      "fpr_at_recall_50": 0.3795782463928968,
+      "fpr_at_recall_80": 0.8990011098779135,
+      "review_flagged": 98,
+      "review_precision": 0.3163265306122449,
+      "review_recall": 0.14220183486238533,
+      "recall_by_type_at_review": {
+        "PO_PRICE_MISMATCH": "21/64",
+        "QUANTITY_DISCREPANCY": "3/62",
+        "HISTORICAL_PRICE_SPIKE": "6/65",
+        "DUPLICATE_INVOICE": "1/27"
+      },
+      "latency_ms_per_1000": 42.137303465340054,
+      "fit_seconds": 0.14717991099996652
+    },
+    "ECOD": {
+      "family": "distribution",
+      "p_at_10": 0.8,
+      "p_at_25": 0.48,
+      "p_at_50": 0.34,
+      "roc_auc": 0.7702654542862669,
+      "pr_auc": 0.3168787810867248,
+      "pr_auc_ci95": [
+        0.2655535323525308,
+        0.38151138665895196
+      ],
+      "fpr_at_recall_50": 0.10987791342952276,
+      "fpr_at_recall_80": 0.39844617092119866,
+      "review_flagged": 87,
+      "review_precision": 0.367816091954023,
+      "review_recall": 0.14678899082568808,
+      "recall_by_type_at_review": {
+        "PO_PRICE_MISMATCH": "12/64",
+        "QUANTITY_DISCREPANCY": "4/62",
+        "HISTORICAL_PRICE_SPIKE": "16/65",
+        "DUPLICATE_INVOICE": "0/27"
+      },
+      "latency_ms_per_1000": 2.38319356437594,
+      "fit_seconds": 0.004718674999821815
+    },
+    "Robust Mahalanobis (MCD)": {
+      "family": "linear / covariance",
+      "p_at_10": 0.7,
+      "p_at_25": 0.36,
+      "p_at_50": 0.32,
+      "roc_auc": 0.9127116659369304,
+      "pr_auc": 0.4753567950617959,
+      "pr_auc_ci95": [
+        0.4251027233300919,
+        0.5411469186331681
+      ],
+      "fpr_at_recall_50": 0.06104328523862375,
+      "fpr_at_recall_80": 0.06381798002219756,
+      "review_flagged": 28,
+      "review_precision": 0.32142857142857145,
+      "review_recall": 0.04128440366972477,
+      "recall_by_type_at_review": {
+        "PO_PRICE_MISMATCH": "1/64",
+        "QUANTITY_DISCREPANCY": "2/62",
+        "HISTORICAL_PRICE_SPIKE": "6/65",
+        "DUPLICATE_INVOICE": "0/27"
+      },
+      "latency_ms_per_1000": 0.368635643540209,
+      "fit_seconds": 1.8456992869998885
+    },
+    "Autoencoder (MLP 32-8-32)": {
+      "family": "neural reconstruction",
+      "p_at_10": 0.3,
+      "p_at_25": 0.32,
+      "p_at_50": 0.3,
+      "roc_auc": 0.71935107780346,
+      "pr_auc": 0.2626141603522497,
+      "pr_auc_ci95": [
+        0.21816550097501966,
+        0.31816675161610153
+      ],
+      "fpr_at_recall_50": 0.1281908990011099,
+      "fpr_at_recall_80": 0.5665926748057714,
+      "review_flagged": 129,
+      "review_precision": 0.34108527131782945,
+      "review_recall": 0.2018348623853211,
+      "recall_by_type_at_review": {
+        "PO_PRICE_MISMATCH": "9/64",
+        "QUANTITY_DISCREPANCY": "8/62",
+        "HISTORICAL_PRICE_SPIKE": "27/65",
+        "DUPLICATE_INVOICE": "0/27"
+      },
+      "latency_ms_per_1000": 0.8483188119246526,
+      "fit_seconds": 8.177216412000007
+    },
+    "Consensus ensemble (IF + LOF + AE)": {
+      "family": "rank average",
+      "p_at_10": 0.6,
+      "p_at_25": 0.52,
+      "p_at_50": 0.42,
+      "roc_auc": 0.7077202700363511,
+      "pr_auc": 0.23741635688404478,
+      "pr_auc_ci95": [
+        0.19387768626052507,
+        0.2987550877378918
+      ],
+      "fpr_at_recall_50": 0.23917869034406217,
+      "fpr_at_recall_80": 0.44950055493895674,
+      "review_flagged": 127,
+      "review_precision": 0.3228346456692913,
+      "review_recall": 0.18807339449541285,
+      "recall_by_type_at_review": {
+        "PO_PRICE_MISMATCH": "20/64",
+        "QUANTITY_DISCREPANCY": "10/62",
+        "HISTORICAL_PRICE_SPIKE": "10/65",
+        "DUPLICATE_INVOICE": "1/27"
+      },
+      "latency_ms_per_1000": 102.58819059408148,
+      "fit_seconds": 9.409542425999916
+    }
+  },
+  "runtime_seconds": 31.3
+}

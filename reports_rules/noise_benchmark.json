@@ -1,0 +1,199 @@
+{
+  "Clean data (no disruption)": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 1,
+    "tn": 4500,
+    "precision": 1.0,
+    "recall": 0.998,
+    "f1": 0.999,
+    "pending": 1,
+    "pending_planted": 1,
+    "fp_by_type": {},
+    "fn_by_type": {
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 0,
+    "precision_excl_low_confidence": 1.0,
+    "recall_excl_low_confidence": 0.998,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 0
+  },
+  "Fuzzy duplicate invoice numbers (all 40 re-entries)": {
+    "tp": 496,
+    "fp": 0,
+    "fn": 4,
+    "tn": 4500,
+    "precision": 1.0,
+    "recall": 0.992,
+    "f1": 0.996,
+    "pending": 1,
+    "pending_planted": 1,
+    "fp_by_type": {},
+    "fn_by_type": {
+      "DUPLICATE_INVOICE": 3,
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 58,
+    "precision_excl_low_confidence": 1.0,
+    "recall_excl_low_confidence": 0.992,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 0
+  },
+  "25% of re-entries booked under a duplicate vendor record": {
+    "tp": 489,
+    "fp": 0,
+    "fn": 11,
+    "tn": 4500,
+    "precision": 1.0,
+    "recall": 0.978,
+    "f1": 0.9889,
+    "pending": 1,
+    "pending_planted": 1,
+    "fp_by_type": {},
+    "fn_by_type": {
+      "DUPLICATE_INVOICE": 10,
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 0,
+    "precision_excl_low_confidence": 1.0,
+    "recall_excl_low_confidence": 0.978,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 0
+  },
+  "Warehouse posting lag 21 days": {
+    "tp": 499,
+    "fp": 7,
+    "fn": 1,
+    "tn": 4493,
+    "precision": 0.9862,
+    "recall": 0.998,
+    "f1": 0.992,
+    "pending": 31,
+    "pending_planted": 1,
+    "fp_by_type": {
+      "QUANTITY_DISCREPANCY": 7
+    },
+    "fn_by_type": {
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 0,
+    "precision_excl_low_confidence": 0.9862,
+    "recall_excl_low_confidence": 0.998,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 0
+  },
+  "Rounding noise (+/-1 cent, 3 decimals) on 10% of lines": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 1,
+    "tn": 4500,
+    "precision": 1.0,
+    "recall": 0.998,
+    "f1": 0.999,
+    "pending": 1,
+    "pending_planted": 1,
+    "fp_by_type": {},
+    "fn_by_type": {
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 0,
+    "precision_excl_low_confidence": 1.0,
+    "recall_excl_low_confidence": 0.998,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 0
+  },
+  "Price amendments recorded 5 days after first invoice": {
+    "tp": 499,
+    "fp": 238,
+    "fn": 1,
+    "tn": 4262,
+    "precision": 0.6771,
+    "recall": 0.998,
+    "f1": 0.8068,
+    "pending": 1,
+    "pending_planted": 1,
+    "fp_by_type": {
+      "PO_PRICE_MISMATCH": 238
+    },
+    "fn_by_type": {
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 131,
+    "precision_excl_low_confidence": 0.8167,
+    "recall_excl_low_confidence": 0.998,
+    "low_confidence_lines": 126,
+    "fp_zero_exposure": 0
+  },
+  "Legitimate 35% renegotiation (3 suppliers)": {
+    "tp": 498,
+    "fp": 46,
+    "fn": 2,
+    "tn": 4454,
+    "precision": 0.9154,
+    "recall": 0.996,
+    "f1": 0.954,
+    "pending": 1,
+    "pending_planted": 1,
+    "fp_by_type": {
+      "HISTORICAL_PRICE_SPIKE": 46
+    },
+    "fn_by_type": {
+      "PO_PRICE_MISMATCH": 1,
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 0,
+    "precision_excl_low_confidence": 0.9154,
+    "recall_excl_low_confidence": 0.996,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 46
+  },
+  "Returns posted as negative receipts (5% of receipts)": {
+    "tp": 499,
+    "fp": 238,
+    "fn": 1,
+    "tn": 4262,
+    "precision": 0.6771,
+    "recall": 0.998,
+    "f1": 0.8068,
+    "pending": 11,
+    "pending_planted": 1,
+    "fp_by_type": {
+      "QUANTITY_DISCREPANCY": 238
+    },
+    "fn_by_type": {
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 0,
+    "precision_excl_low_confidence": 0.6771,
+    "recall_excl_low_confidence": 0.998,
+    "low_confidence_lines": 0,
+    "fp_zero_exposure": 0
+  },
+  "ALL SEVEN COMBINED": {
+    "tp": 488,
+    "fp": 504,
+    "fn": 12,
+    "tn": 3996,
+    "precision": 0.4919,
+    "recall": 0.976,
+    "f1": 0.6542,
+    "pending": 35,
+    "pending_planted": 1,
+    "fp_by_type": {
+      "PO_PRICE_MISMATCH": 235,
+      "QUANTITY_DISCREPANCY": 223,
+      "HISTORICAL_PRICE_SPIKE": 46
+    },
+    "fn_by_type": {
+      "DUPLICATE_INVOICE": 10,
+      "PO_PRICE_MISMATCH": 1,
+      "QUANTITY_DISCREPANCY": 1
+    },
+    "low_or_medium_confidence_findings": 173,
+    "precision_excl_low_confidence": 0.559,
+    "recall_excl_low_confidence": 0.976,
+    "low_confidence_lines": 119,
+    "fp_zero_exposure": 42
+  }
+}

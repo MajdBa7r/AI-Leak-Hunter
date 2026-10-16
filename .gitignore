@@ -1,0 +1,36 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Secrets: never commit real keys ---
+.streamlit/secrets.toml
+.env
+.env.*
+
+# --- Generated at runtime (the app rebuilds outputs/ on first load) ---
+outputs/
+outputs_*/
+data_replica_seed*/
+
+# --- Local databases (case decision log) ---
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*-wal
+*-shm
+
+# --- Archives and OS / editor clutter ---
+*.zip
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

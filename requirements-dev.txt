@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8.0
+matplotlib>=3.8
+shap>=0.45

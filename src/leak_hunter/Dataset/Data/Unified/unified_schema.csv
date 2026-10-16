@@ -1,0 +1,58 @@
+column,source,role,description,missing_when
+invoice_id,invoices,key,Internal invoice document ID,never
+invoice_line_id,invoices,key,Invoice line ID (primary key of this file),never
+invoice_number,invoices,feature,Supplier's own invoice number (string),never
+supplier_id,invoices,key,Supplier ID; equals the PO's supplier,never
+po_id,invoices,key,Purchase order ID,never
+po_line_id,invoices,key,Purchase order line ID,never
+item_id,invoices,key,Item ID; equals the PO line and receipt item,never
+invoice_date,invoices,feature,Invoice date,never
+quantity_invoiced,invoices,feature,Invoiced quantity,never
+unit_price,invoices,feature,"Invoiced unit price, USD",never
+currency,invoices,feature,Invoice currency (USD),never
+line_amount,invoices,feature,"quantity_invoiced x unit_price, USD",never
+payment_status,invoices,feature,Paid / Partially Paid / Unpaid as of 2026-09-30,never
+amount_paid,invoices,feature,"Amount paid on this line, USD",never
+supplier_name,suppliers,feature,Fictional supplier name,never
+supplier_category,suppliers.category,feature,Supplier category,never
+supplier_country,suppliers.country,feature,Supplier country,never
+supplier_tier,suppliers,feature,Small / Medium / Large,never
+po_date,purchase_orders,feature,PO date,never
+item_description,purchase_orders,feature,Item description,never
+quantity_ordered,purchase_orders,feature,Original ordered quantity (before any amendment),never
+po_unit_price,purchase_orders.unit_price,feature,"Original PO unit price, USD (before any amendment)",never
+po_currency,purchase_orders.currency,feature,PO currency (USD),never
+approved_amendment_id,purchase_orders,feature,Approved amendment applying to the PO line,no approved amendment on the PO line
+amendment_id,po_amendments,feature,"Amendment on the PO line, any status (incl. Rejected)",no amendment of any status on the PO line
+amendment_date,po_amendments,feature,Amendment effective/decision date,no amendment
+amendment_type,po_amendments,feature,PRICE or QUANTITY,no amendment
+amendment_status,po_amendments.status,feature,Approved or Rejected,no amendment
+amendment_previous_unit_price,po_amendments.previous_unit_price,feature,"Price before amendment, USD","no amendment, or QUANTITY amendment"
+amendment_new_unit_price,po_amendments.new_unit_price,feature,"Requested/approved new price, USD","no amendment, or QUANTITY amendment"
+amendment_previous_quantity,po_amendments.previous_quantity,feature,Quantity before amendment,"no amendment, or PRICE amendment"
+amendment_new_quantity,po_amendments.new_quantity,feature,Approved new quantity,"no amendment, or PRICE amendment"
+amendment_decided_by,po_amendments.decided_by,feature,Approver role,no amendment
+approved_unit_price,derived,derived,"Applicable approved price at invoice_date: PO price, replaced by an Approved PRICE amendment dated on/before invoice_date. USD",never
+approved_quantity,derived,derived,Ordered quantity after an Approved QUANTITY amendment,never
+receipt_count,goods_receipts (aggregated),feature,Number of receipt lines for the PO line,never
+receipt_ids,goods_receipts (aggregated),feature,';'-list of receipt_id in date order,never
+receipt_dates,goods_receipts (aggregated),feature,"';'-list of receipt_date, aligned with receipt_ids",never
+receipt_quantities,goods_receipts (aggregated),feature,"';'-list of quantity_received, aligned",never
+first_receipt_date,goods_receipts (aggregated),feature,Earliest receipt date for the PO line,never
+last_receipt_date,goods_receipts (aggregated),feature,Latest receipt date for the PO line,never
+quantity_received_total,goods_receipts (aggregated),feature,Sum of ALL receipt lines for the PO line (per PO line: do not sum across invoice rows),never
+quantity_received_as_of_invoice_date,derived,derived,Receipts dated on/before invoice_date,never
+is_anomaly,ground_truth,label,1 anomaly / 0 normal,never
+primary_anomaly_type,ground_truth,label,NORMAL or one of four anomaly types,never
+all_applicable_anomaly_types,ground_truth,label,"'|'-list, primary first; NORMAL for normal rows",never
+expected_exposure,ground_truth,label,"Potential exposure, USD (duplicates: on repeat entry only)",never
+exposure_currency,ground_truth,label,USD,never
+expected_evidence_ids,ground_truth,label,';'-list of IDs supporting the case,normal rows
+case_description,ground_truth,label,Plain-language explanation,never
+exposure_basis,ground_truth,label,Formula used for expected_exposure,never
+exposure_paid_to_date,ground_truth,label,"Realized part of the exposure (already paid), USD",never
+duplicate_group_id,ground_truth,label,Duplicate pair ID,not a DUPLICATE_INVOICE row
+hist_n_prior,ground_truth,label,Prior lines in the historical baseline,not a HISTORICAL_PRICE_SPIKE row
+hist_baseline_median,ground_truth,label,"Median prior unit price, USD",not a HISTORICAL_PRICE_SPIKE row
+hist_price_ratio,ground_truth,label,unit_price / baseline median (4 dp),not a HISTORICAL_PRICE_SPIKE row
+scenario_tags,ground_truth,label,';'-list of scenario / variant tags,never (may be empty for plain normal rows)
